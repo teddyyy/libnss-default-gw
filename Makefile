@@ -22,7 +22,6 @@ all: $(SHARED_OBJECT)
 
 $(SHARED_OBJECT): $(OBJECTS)
 	$(CC) $(CFLAGS) $(LDFLAGS) -o $(SHARED_OBJECT) $(OBJECTS) $(LIBS)
-	rm -f $(OBJECTS)
 
 %$(OBJSUFFIX): %.c
 	$(CC) $(CPPFLAGS) $(CFLAGS) -I$(INCPATH) -fPIC -c -o $@ $<
