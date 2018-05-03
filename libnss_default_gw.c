@@ -21,6 +21,8 @@ find_default_gateway_addr(int family) {
         int err;
 
         sock = nl_socket_alloc();
+	if (sock == NULL)
+		return NULL;
 
         err = nl_connect(sock, NETLINK_ROUTE);
         if (err) {
